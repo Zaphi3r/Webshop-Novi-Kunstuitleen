@@ -7,7 +7,9 @@
     <head>
         <meta charset="utf-8">
         <title>Novi Kunstuitleen</title>
+        <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
         <link rel="stylesheet" type="text/css" href="css/style.css">
+        
     </head>
     <body>
 
