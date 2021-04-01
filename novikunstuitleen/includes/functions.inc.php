@@ -1,5 +1,7 @@
 <?php
 
+
+
 function emptyInputSignup($name, $email, $username, $pwd, $pwdRepeat){
     $result;
     if (empty($name) || empty($email) || empty($username) || empty($pwd) || empty($pwdRepeat)) {
@@ -65,6 +67,7 @@ function uidExists($conn, $username, $email){
         $result = false;
         return $result;
     }
+
     mysqli_stmt_close($stmt);
 }
 
@@ -117,6 +120,7 @@ function loginUser($conn, $username, $pwd){
          $_SESSION["userid"] = $uidExists["usersId"];
          $_SESSION["useruid"] = $uidExists["usersUid"];
          $_SESSION["role"] = $uidExists["usersRole"];
+         
          header("location: ../index.php");
          exit();
     }

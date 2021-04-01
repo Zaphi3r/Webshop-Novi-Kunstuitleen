@@ -5,9 +5,11 @@
                         <?php
         if (isset($_SESSION["useruid"])) {
             echo "<h2> Hello there, " . $_SESSION["useruid"] . "!</h2>";
+            }
+        if (isset($_SESSION["role"])) {
             echo "<h2> Hello there, " . $_SESSION["role"] . "!</h2>";
-            } 
-           
+            }
+            
         ?>                                                
                     
                  
