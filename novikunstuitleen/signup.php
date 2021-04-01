@@ -13,7 +13,8 @@
             <input class="signup-form-input" type="password" name="pwd" placeholder="Password...">
             <input class="signup-form-input" type="password" name="pwdrepeat" placeholder="Repeat password...">
             <button class="signup-form-button" type="submit" name="submit">Sign up</button>
-            </div>
+            
+        </div>
             </form>
         
 

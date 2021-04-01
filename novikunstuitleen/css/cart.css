@@ -27,3 +27,56 @@
 body {
     background-color: #eee;
 }
+
+.table {
+    margin: 0px auto;
+    float: none;
+}
+.row{
+    margin: 0px auto;
+}
+.centered{
+    float:none;
+    margin: 0 auto;
+}
+
+.button {
+    background: #e07800;
+    color:white;
+    text-align: center;
+    padding: 12px;
+    text-decoration: none;
+    display:block;
+    border-radius: 3px;
+    font-size: 16px;
+    margin: 25px 0 15px 0;
+}
+.button:visited{
+    text-decoration: none;
+    color:white;
+}
+.button:hover{
+    background: #eb7d00;
+    text-decoration: none;
+    color: white;
+}
+.button:active {
+    text-decoration: none;
+    color:white;
+}
+.btn-danger {
+    font-size: 12px;
+    padding: 3px;
+}
+.btn-danger:hover{
+    text-decoration: none;
+}
+a {
+    text-decoration: none;
+}
+a:hover {
+    text-decoration: none;
+}
+h3 {
+    margin-top: 0px;
+}

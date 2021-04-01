@@ -69,7 +69,7 @@ function uidExists($conn, $username, $email){
 }
 
 function createUser($conn, $name, $email, $username, $pwd){
-    $sql = "INSERT INTO users (usersName, usersEmail, usersUid, usersPwd) VALUES (?, ?, ?, ?);";
+    $sql = "INSERT INTO users (usersName, usersEmail, usersUid, usersPwd, usersRole) VALUES (?, ?, ?, ?, '');";
     $stmt = mysqli_stmt_init($conn);
     if (!mysqli_stmt_prepare($stmt, $sql)){
 
@@ -116,7 +116,9 @@ function loginUser($conn, $username, $pwd){
          session_start();
          $_SESSION["userid"] = $uidExists["usersId"];
          $_SESSION["useruid"] = $uidExists["usersUid"];
+         $_SESSION["role"] = $uidExists["usersRole"];
          header("location: ../index.php");
          exit();
     }
 }
+
