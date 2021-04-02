@@ -138,7 +138,9 @@ function loginUser($conn, $username, $pwd){
          session_start();
          $_SESSION["userid"] = $uidExists["usersId"];
          $_SESSION["useruid"] = $uidExists["usersUid"];
+         $_SESSION["usersemail"] = $uidExists["usersEmail"];
          $_SESSION["role"] = $uidExists["usersRole"];
+         
          
          header("location: ../index.php");
          exit();

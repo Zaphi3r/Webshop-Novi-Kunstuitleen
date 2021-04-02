@@ -5,13 +5,15 @@
                         <?php
         if (isset($_SESSION["useruid"])) {
             echo "<h2> Hello there, " . $_SESSION["useruid"] . "!</h2>";
-        }
             
+        }
+        if (isset($_SESSION["usersemail"])) {
+            echo "<h2> Hello there, " . $_SESSION["usersemail"] . "!</h2>";
+            
+        }
+ 
         ?>                                                
-                    
-                 
                 
-               
                     <div class="col-md-8">
                         <div class="tab-content profile-tab" id="myTabContent">
                                         <div class="row">
@@ -22,20 +24,22 @@
                                                 <p><?php echo $_SESSION["useruid"] ?></p>
                                             </div>
                                         </div>
-                                        <div class="row">
+
+                                        <!-- Niet de te tijd gehad om uit te zoeken waarom deze niet werkt en de role/useruid wel werkt. -->
+                                        <!-- <div class="row">
                                             <div class="col-md-6">
                                                 <label>Email</label>
                                             </div>
                                             <div class="col-md-6">
-                                                <p><?php echo $_SESSION["email"] ?></p>
+                                                <p><?php echo $_SESSION["usersemail"]; ?></p>
                                             </div>
-                                        </div>
+                                        </div> -->
                                         <div class="row">
                                             <div class="col-md-6">
                                                 <label>Rol</label>
                                             </div>
                                             <div class="col-md-6">
-                                                <p>Medewerker</p>
+                                                <p><?php echo $_SESSION["role"]; ?></p>
                                             </div>
                                         </div>
 

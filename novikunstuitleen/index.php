@@ -17,20 +17,28 @@
             <h1>Welkom tot de kunstuitleen shop van Novi!</h1>
             <p> Zien wat wij beschikbaar voor verhuur hebben?</p>
             <a href="products.php">Klik hier!</a></li>
+            
         </section>
-
+        <h3>Wat is nieuw?</h3> 
         <section class="index-categories">
-            <h3>Wat is nieuw?</h3> 
+           
             <div class="index-categories-list"> 
             <?php
             if($result):
                 if(mysqli_num_rows($result)>0):
                     while($product = mysqli_fetch_assoc($result)):     
                     ?>   
-                <div>
+                
+                <div class="col-sm-4 col-md-3" >
+                        <form method="post" action="products.php?action=add&id=<?php echo $product['id']?>">
+                            <div class="products">
+                            
                 <img src="uploads/<?php echo $product['image']?>" class="img-responsive" />
-                <h3 class="text-info"><?php echo $product['name']; ?></h3>
-
+                <h3 class="text-info"><?php echo $product['name']; ?></h3>    
+                            
+                            </div>
+                        </form>
+                    </div>
                 
             
        
@@ -41,8 +49,7 @@
                 endif;
             endif;
         ?>
-        </div>
-        </div>
+        
         </div>
  </section>
     <?php
