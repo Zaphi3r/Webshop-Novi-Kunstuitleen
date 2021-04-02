@@ -89,6 +89,25 @@ function createUser($conn, $name, $email, $username, $pwd){
         exit();   
 }
 
+function uploadArt($name, $imageName, $price ){
+    $conn = mysqli_connect('localhost', 'root', '', 'shopping_cart');
+    
+    $sql = "INSERT INTO products (name, image, price) VALUES (?, ?, ?);";
+    $stmt = mysqli_stmt_init($conn);
+    if (!mysqli_stmt_prepare($stmt, $sql)){
+     
+        header("location: ../profile.php?error=stmt");
+        exit();
+    }
+  
+    mysqli_stmt_bind_param($stmt, "sss", $name, $imageName, $price);
+    mysqli_stmt_execute($stmt);
+    mysqli_stmt_close($stmt);
+    header("Location: /novikunstuitleen/profile.php?uploadsuccess");
+    exit();
+    
+}
+
 function emptyInputLogin($username, $pwd){
     $result;
     if (empty($username) || empty($pwd)) {

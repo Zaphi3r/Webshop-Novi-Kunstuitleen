@@ -11,7 +11,7 @@
         <title>Novi Kunstuitleen</title>
         <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
         <link rel="stylesheet" type="text/css" href="css/style.css">
-        
+
     </head>
     <body>
 
@@ -22,7 +22,7 @@
                     <a href="index.php"><img src="img/logo-novi.png" width="75" height="75" alt="Novi logo"></>
                     <li><a href="index.php">Home</a></li>
                     <li><a href="products.php">Products</a></li>
-                    <li><a href="customerService.php">Help</a></li>
+                    <li><a href="help.php">Help</a></li>
                     <?php
                         if (isset($_SESSION["useruid"])) {
                             echo "<li><a href='profile.php'>Profile</a></li>";

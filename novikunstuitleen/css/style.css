@@ -115,18 +115,21 @@ ul li a:hover {
 .index-categories h3 {
     margin-left: 8px;
 }
+/* .index-categories img {
+    width: 100px;
+    height: 100px;
+} */
 
-.index-categories-list h3 {
+.index-categories-list img {
     
     background-color: #ffffff;
-    height: 234px;
-    width: 234px;
-    display:inline;
+    max-height: 234px;
+    width: fit-content;
     float:left;
     margin: 8px;
 }
 
-.footer {
+/* .footer {
   
     left: 0;
     bottom: 0;
@@ -135,7 +138,7 @@ ul li a:hover {
     background-color: rgb(126, 126, 126);
     color: white;
     text-align: center;
-}
+} */
 
 .login-form,
 .login-form * {
@@ -265,10 +268,6 @@ ul li a:hover {
     font-size: 20px;
 }
 
-
-
-
-
 .profile-tab label{
     font-weight: 600;
 }
@@ -291,5 +290,66 @@ ul li a:hover {
     margin-bottom: 20px;
 }
 
+.profile-form,
+.profile-form * {
+  
+    font-family: 'Source Sans Pro';
+    
+}
+
+.profile-form {
+    max-width: 350px;
+    margin: 50px auto;
+    border-radius: 5px;
+    overflow: hidden;
+}
+
+.profile-form-content {
+    padding: 30px;
+    background: #ffffff;
+}
+
+.profile-form-input {
+    width: 100%;
+    margin-bottom: 10px;
+    padding: 10px;
+    border-radius: 5px;
+    border: 2px solid #dddddd;
+    background: #eeeeee;
+    outline: none;
+    transition: border-color 0.5s;
+}
+
+.profile-form-input:focus {
+    border-color: #e07800;
+}
+
+.profile-form-input::placeholder {
+    color: #aaaaaa;
+}
+
+.profile-form-button {
+    padding: 10px;
+    color: #ffffff;
+    font-weight: bold;
+    background: #e07800;
+    width: 100%;
+    border: none;
+    outline: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.profile-form-button:active {
+    background: #e07800;
+}
+
+
+.profile-form-header {
+    margin-bottom: 15px;
+    text-align: center;
+    color: #333333;
+    font-size: 20px;
+}
 
 

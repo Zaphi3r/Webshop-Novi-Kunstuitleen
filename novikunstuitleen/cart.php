@@ -46,13 +46,8 @@ if(filter_input(INPUT_GET, 'action') == 'delete') {
     $_SESSION['cart'] = array_values($_SESSION['cart']);
 }
 
-pre_r($_SESSION);
 
-function pre_r($array){
-    echo '<pre>';
-    print_r($array);
-    echo '</pre>';
-}
+
 ?>
     <body>
     <div class="wrapper">    
@@ -72,7 +67,7 @@ function pre_r($array){
                     <div class="col-sm-4 col-md-3" >
                         <form method="post" action="products.php?action=add&id=<?php echo $product['id']?>">
                             <div class="products">
-                                <img src="<?php echo $product['image']?>" class="img-responsive" />
+                                <img src="uploads/<?php echo $product['image']?>" class="img-responsive" />
                                 <h4 class="text-info"><?php echo $product['name']; ?></h4>
                                 <h4>€<?php echo $product['price']; ?></h4>
                                 <input type="text" name ="quantity" class="form-control" value="1" />
@@ -99,13 +94,13 @@ function pre_r($array){
                 <th width="15%">Total</th>
                 <th width="5%">Action</th>
             </tr>
-            <?php
+          <?php
             if(!empty($_SESSION['cart'])):
                 
                 $total = 0;
 
                 foreach($_SESSION['cart'] as $key => $product):
-            ?>
+            ?> 
             <tr>
                     <td><?php echo $product['name']; ?></td>
                     <td><?php echo $product['quantity']; ?></td>
@@ -131,14 +126,17 @@ function pre_r($array){
                 <?php
                     if (isset($_SESSION['cart'])):
                     if (count($_SESSION['cart']) > 0):
+
+                        $_SESSION['total'] = $total;
                         ?>
-                        <a href="#" class="button">Checkout</a>
+                        
+                        <a href="checkout.php?total=<?php echo $total ?>" class="button">Checkout</a>
                         <?php endif; endif; ?>
                 </td>
             </tr>
-            <?php
-            endif;
-            ?>
+             <?php
+            endif; 
+             ?>
 
             </div>    
         </div>

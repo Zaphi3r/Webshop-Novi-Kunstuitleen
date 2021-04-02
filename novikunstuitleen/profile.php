@@ -5,10 +5,7 @@
                         <?php
         if (isset($_SESSION["useruid"])) {
             echo "<h2> Hello there, " . $_SESSION["useruid"] . "!</h2>";
-            }
-        if (isset($_SESSION["role"])) {
-            echo "<h2> Hello there, " . $_SESSION["role"] . "!</h2>";
-            }
+        }
             
         ?>                                                
                     
@@ -22,7 +19,7 @@
                                                 <label>Name</label>
                                             </div>
                                             <div class="col-md-6">
-                                                <p>Frank</p>
+                                                <p><?php echo $_SESSION["useruid"] ?></p>
                                             </div>
                                         </div>
                                         <div class="row">
@@ -30,7 +27,7 @@
                                                 <label>Email</label>
                                             </div>
                                             <div class="col-md-6">
-                                                <p>abc@hotmail.com</p>
+                                                <p><?php echo $_SESSION["email"] ?></p>
                                             </div>
                                         </div>
                                         <div class="row">
@@ -41,15 +38,33 @@
                                                 <p>Medewerker</p>
                                             </div>
                                         </div>
-                                        <div class="row">
-                                            <div class="col-md-6">
-                                                <label>Crypto Wallet</label>
-                                            </div>
-                                            <div class="col-md-6">
-                                                <p>Informatie m.b.t Cryptowallet</p>
-                                            </div>
+
+                                        <?php
+                                     
+                                        if (isset($_SESSION["role"])) {
+                                        
+                                        ?>
+                                        
+                                        <form class="profile-form"action="upload.php" method="POST" enctype="multipart/form-data">
+                                        <div class="profile-form-content">
+                                        <h3>Kunst verhuren</h3>
+                                        <p>Foto</p>
+                                        <input class="profile-form-upload" type="file" name="file">
+                                        <p>Naam</p>
+                                        <input class="profile-form-input" type="text" name ="upload-name" class="form-control" />
+                                        <p>Prijs</p>
+                                        <input class="profile-form-input" type="text" name ="upload-price" class="form-control" />
+
+
+                                        <button class="profile-form-button" type="submit" name="submit-art">UPLOAD
+                                        </button>
                                         </div>
-                                        <p>Klik hier om kunst te verhuren</p>
+                                        </form>       
+
+                                        
+                                  <?php
+                                        }
+                                  ?>      
                             </div>
           
                                     </div>
